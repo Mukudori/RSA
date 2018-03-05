@@ -6,6 +6,7 @@ import java.awt.*;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
 
+
 public class Controller {
     @FXML
     TextField tfQ;
@@ -13,12 +14,22 @@ public class Controller {
     TextField tfP;
     @FXML
     TextArea taOut;
+    @FXML
+    TextArea taInp;
 
     @FXML
     public void EncryptClick()
+            throws Exception
     {
-        taOut.setText(tfQ.getText()+tfP.getText());
+        RSA rsa = new RSA(Integer.parseInt(tfP.getText()), Integer.parseInt(tfQ.getText() ));
+        taOut.setText(rsa.getEncrypt(taInp.getText()));
+    }
 
+    @FXML
+    private void DecryptClick()
+    {
+        RSA rsa = new RSA(Integer.parseInt(tfP.getText()), Integer.parseInt(tfQ.getText() ));
+        taOut.setText(rsa.getDecript(taInp.getText()));
     }
 
 

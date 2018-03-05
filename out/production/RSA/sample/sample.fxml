@@ -22,7 +22,7 @@
    </rowConstraints>
     <children>
        <Label text="Входное сообщение" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-       <TextArea id="taInput" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" GridPane.rowSpan="2">
+       <TextArea fx:id="taInp" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.rowIndex="1" GridPane.rowSpan="2">
          <GridPane.margin>
             <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
          </GridPane.margin></TextArea>
@@ -39,8 +39,8 @@
                </rowConstraints>
                <children>
                    <Label text="Q" GridPane.columnIndex="1" />
-                   <TextField fx:id="tfQ" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                   <TextField id="tfP" fx:id="tfP" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                   <TextField fx:id="tfQ" text="11" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                   <TextField id="tfP" fx:id="tfP" text="3" GridPane.columnIndex="0" GridPane.rowIndex="1" />
                    <Label text="P" />
                </children>
             </GridPane>
@@ -55,7 +55,7 @@
                <GridPane.margin>
                   <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                </GridPane.margin></Button>
-                    <Button text="Расшифровать" GridPane.rowIndex="1">
+                    <Button text="Расшифровать" GridPane.rowIndex="1" onAction="#DecryptClick">
                <GridPane.margin>
                   <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                </GridPane.margin></Button>
@@ -71,7 +71,7 @@
 
 
         <Label text="Выходное сообщение" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-        <TextArea fx:id="taOut" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
+        <TextArea fx:id="taOut" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
           <GridPane.margin>
              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
           </GridPane.margin></TextArea>
